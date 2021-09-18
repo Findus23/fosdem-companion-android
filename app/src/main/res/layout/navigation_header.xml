@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/main_menu_header_height"
     android:contentDescription="@string/app_name"
-    android:padding="@dimen/main_menu_padding"
-    android:scaleType="center"
-    app:srcCompat="@drawable/fosdem_title"
+    android:paddingHorizontal="@dimen/main_menu_padding"
+    android:paddingTop="@dimen/main_menu_padding"
+    android:scaleType="fitCenter"
+    app:srcCompat="@drawable/ic_matomocamp_logo_textonly"
     app:tint="?colorOnSurface" />

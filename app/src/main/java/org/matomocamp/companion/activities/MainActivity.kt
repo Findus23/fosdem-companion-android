@@ -68,8 +68,7 @@ class MainActivity : AppCompatActivity(R.layout.main), CreateNfcAppDataCallback 
         TRACKS(TracksFragment::class.java, R.id.menu_tracks, true, true),
         BOOKMARKS(BookmarksListFragment::class.java, R.id.menu_bookmarks, false, false),
         LIVE(LiveFragment::class.java, R.id.menu_live, true, false),
-        SPEAKERS(PersonsListFragment::class.java, R.id.menu_speakers, false, false),
-        MAP(MapFragment::class.java, R.id.menu_map, false, false);
+        SPEAKERS(PersonsListFragment::class.java, R.id.menu_speakers, false, false);
 
         companion object {
             fun fromMenuItemId(@IdRes menuItemId: Int): Section? {

@@ -27,7 +27,7 @@
     <string name="filter">Filter</string>
     <string name="upcoming_only">Upcoming only</string>
     <string name="export_bookmarks">Export bookmarks</string>
-    <string name="export_bookmarks_file_name">FOSDEM %1$d bookmarks.ics</string>
+    <string name="export_bookmarks_file_name">MatomoCamp %1$d bookmarks.ics</string>
     <string name="import_bookmarks">Import bookmarks</string>
     <string name="import_bookmarks_error">Unable to import bookmarks from the selected file.\n\nMake sure the file was created using this application and the conference year is matching.</string>
     <string name="no_bookmark">No bookmark.</string>
@@ -40,11 +40,11 @@
 
     <!-- Live -->
     <string name="all">All</string>
-    <string name="all_empty">During FOSDEM, the events to come in the next 3 hours will be shown here.</string>
+    <string name="all_empty">During MatomoCamp, the events to come in the next 3 hours will be shown here.</string>
     <string name="next">Next</string>
-    <string name="next_empty">During FOSDEM, the events to come in the next 3 hours will be shown here.</string>
+    <string name="next_empty">During MatomoCamp, the events to come in the next 3 hours will be shown here.</string>
     <string name="now">Now</string>
-    <string name="now_empty">During FOSDEM, the events in progress will be shown here.</string>
+    <string name="now_empty">During MatomoCamp, the events in progress will be shown here.</string>
 
     <!-- Track types -->
     <string name="other">Other</string>
@@ -154,8 +154,11 @@
     <string name="no_data">No data available.</string>
     <string name="volunteer">Volunteer</string>
     <string name="about_text">Programmed by <a href="https://www.digitalia.be/">Christophe Beyls</a>.
+\nBased on <a href="https://github.com/cbeyls/fosdem-companion-android">FOSDEM Companion</a>
+and adapted to MatomoCamp by <a href="https://lw1.at/">Lukas Winkler</a>.
 \n
-\nLicensed under the Apache License, version 2.0. Source available on <a href="https://github.com/cbeyls/fosdem-companion-android">GitHub</a>.
+\nLicensed under the Apache License, version 2.0. Source available on <a href="https://github.com/MatomoCamp/matomocamp-companion-android/">GitHub</a>.
+\n
 \nThe name FOSDEM and the gear logo are registered trademarks of FOSDEM VZW.  Used with permission.
 \n
 \n<small>This application makes use of the following libraries:
