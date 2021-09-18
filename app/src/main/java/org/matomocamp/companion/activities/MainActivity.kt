@@ -36,7 +36,6 @@ import org.matomocamp.companion.api.MatomoCampUrls
 import org.matomocamp.companion.db.ScheduleDao
 import org.matomocamp.companion.fragments.BookmarksListFragment
 import org.matomocamp.companion.fragments.LiveFragment
-import org.matomocamp.companion.fragments.MapFragment
 import org.matomocamp.companion.fragments.PersonsListFragment
 import org.matomocamp.companion.fragments.TracksFragment
 import org.matomocamp.companion.model.DownloadScheduleResult
