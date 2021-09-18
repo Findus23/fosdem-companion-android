@@ -30,7 +30,7 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.viewModels
 import org.matomocamp.companion.R
 import org.matomocamp.companion.activities.PersonInfoActivity
-import org.matomocamp.companion.api.FosdemApi
+import org.matomocamp.companion.api.MatomoCampApi
 import org.matomocamp.companion.model.Building
 import org.matomocamp.companion.model.Event
 import org.matomocamp.companion.model.EventDetails
@@ -58,7 +58,7 @@ class EventDetailsFragment : Fragment(R.layout.fragment_event_details) {
     }
 
     @Inject
-    lateinit var api: FosdemApi
+    lateinit var api: MatomoCampApi
     private val viewModel: EventDetailsViewModel by viewModels()
 
     val event by lazy<Event>(LazyThreadSafetyMode.NONE) {

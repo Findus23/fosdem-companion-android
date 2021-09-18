@@ -23,7 +23,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import org.matomocamp.companion.R
 import org.matomocamp.companion.activities.ExternalBookmarksActivity
 import org.matomocamp.companion.adapters.BookmarksAdapter
-import org.matomocamp.companion.api.FosdemApi
+import org.matomocamp.companion.api.MatomoCampApi
 import org.matomocamp.companion.providers.BookmarksExportProvider
 import org.matomocamp.companion.utils.CreateNfcAppDataCallback
 import org.matomocamp.companion.utils.toBookmarksNfcAppData
@@ -43,7 +43,7 @@ import javax.inject.Inject
 class BookmarksListFragment : Fragment(R.layout.recyclerview), CreateNfcAppDataCallback {
 
     @Inject
-    lateinit var api: FosdemApi
+    lateinit var api: MatomoCampApi
     private val viewModel: BookmarksViewModel by viewModels()
     private val multiChoiceHelper: MultiChoiceHelper by lazy(LazyThreadSafetyMode.NONE) {
         MultiChoiceHelper(requireActivity() as AppCompatActivity, this, object : MultiChoiceHelper.MultiChoiceModeListener {

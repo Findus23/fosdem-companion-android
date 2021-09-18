@@ -5,7 +5,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Fts3
 import androidx.room.PrimaryKey
-import org.matomocamp.companion.api.FosdemUrls
+import org.matomocamp.companion.api.MatomoCampUrls
 import org.matomocamp.companion.utils.toSlug
 import kotlinx.parcelize.Parcelize
 
@@ -21,7 +21,7 @@ data class Person(
 
     fun getUrl(year: Int): String? {
         val n = name ?: return null
-        return FosdemUrls.getPerson(n.toSlug(), year)
+        return MatomoCampUrls.getPerson(n.toSlug(), year)
     }
 
     override fun toString(): String = name ?: ""

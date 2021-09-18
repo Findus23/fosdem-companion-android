@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.matomocamp.companion.R
 import org.matomocamp.companion.adapters.EventsAdapter
-import org.matomocamp.companion.api.FosdemApi
+import org.matomocamp.companion.api.MatomoCampApi
 import org.matomocamp.companion.viewmodels.PersonInfoViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -20,7 +20,7 @@ import javax.inject.Inject
 class PersonInfoListFragment : Fragment(R.layout.recyclerview) {
 
     @Inject
-    lateinit var api: FosdemApi
+    lateinit var api: MatomoCampApi
     // Fetch data from parent Activity's ViewModel
     private val viewModel: PersonInfoViewModel by activityViewModels()
 

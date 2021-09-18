@@ -28,6 +28,6 @@ class LiveViewModel @Inject constructor(scheduleDao: ScheduleDao) : ViewModel() 
     }
 
     companion object {
-        private const val NEXT_EVENTS_INTERVAL = 30L * DateUtils.MINUTE_IN_MILLIS
+        private const val NEXT_EVENTS_INTERVAL = 3L * DateUtils.HOUR_IN_MILLIS
     }
 }

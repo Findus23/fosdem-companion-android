@@ -10,7 +10,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import org.matomocamp.companion.R
 import org.matomocamp.companion.activities.RoomImageDialogActivity
-import org.matomocamp.companion.api.FosdemApi
+import org.matomocamp.companion.api.MatomoCampApi
 import org.matomocamp.companion.utils.isLightTheme
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,7 +21,7 @@ import javax.inject.Inject
 class RoomImageDialogFragment : DialogFragment() {
 
     @Inject
-    lateinit var api: FosdemApi
+    lateinit var api: MatomoCampApi
 
     @SuppressLint("InflateParams")
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {

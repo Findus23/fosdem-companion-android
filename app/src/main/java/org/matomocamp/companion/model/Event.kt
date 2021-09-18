@@ -4,7 +4,7 @@ import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Embedded
 import androidx.room.TypeConverters
-import org.matomocamp.companion.api.FosdemUrls
+import org.matomocamp.companion.api.MatomoCampUrls
 import org.matomocamp.companion.db.converters.NullableDateTypeConverters
 import org.matomocamp.companion.utils.DateParceler
 import org.matomocamp.companion.utils.DateUtils
@@ -53,7 +53,7 @@ data class Event(
     val url: String?
         get() {
             val s = slug ?: return null
-            return FosdemUrls.getEvent(s, DateUtils.getYear(day.date.time))
+            return MatomoCampUrls.getEvent(s, DateUtils.getYear(day.date.time))
         }
 
     override fun toString(): String = title ?: ""

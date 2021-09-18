@@ -13,8 +13,8 @@ import androidx.core.content.ContextCompat
 import androidx.core.text.set
 import androidx.lifecycle.LifecycleOwner
 import org.matomocamp.companion.R
-import org.matomocamp.companion.api.FosdemApi
-import org.matomocamp.companion.api.FosdemUrls
+import org.matomocamp.companion.api.MatomoCampApi
+import org.matomocamp.companion.api.MatomoCampUrls
 import org.matomocamp.companion.utils.configureToolbarColors
 import org.matomocamp.companion.utils.invertImageColors
 import org.matomocamp.companion.utils.isLightTheme
@@ -32,7 +32,7 @@ import javax.inject.Inject
 class RoomImageDialogActivity : AppCompatActivity(R.layout.dialog_room_image) {
 
     @Inject
-    lateinit var api: FosdemApi
+    lateinit var api: MatomoCampApi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,7 +53,7 @@ class RoomImageDialogActivity : AppCompatActivity(R.layout.dialog_room_image) {
         const val EXTRA_ROOM_NAME = "roomName"
         const val EXTRA_ROOM_IMAGE_RESOURCE_ID = "imageResId"
 
-        fun configureToolbar(api: FosdemApi, owner: LifecycleOwner, toolbar: Toolbar, roomName: String) {
+        fun configureToolbar(api: MatomoCampApi, owner: LifecycleOwner, toolbar: Toolbar, roomName: String) {
             toolbar.title = roomName
             if (roomName.isNotEmpty()) {
                 val context = toolbar.context
@@ -62,7 +62,7 @@ class RoomImageDialogActivity : AppCompatActivity(R.layout.dialog_room_image) {
                 toolbar.setOnMenuItemClickListener { item ->
                     when (item.itemId) {
                         R.id.navigation -> {
-                            val localNavigationUrl = FosdemUrls.getLocalNavigationToLocation(roomName.toSlug())
+                            val localNavigationUrl = MatomoCampUrls.getLocalNavigationToLocation(roomName.toSlug())
                             try {
                                 CustomTabsIntent.Builder()
                                         .configureToolbarColors(context, R.color.light_color_primary)

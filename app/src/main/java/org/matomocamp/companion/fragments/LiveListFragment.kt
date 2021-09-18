@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.matomocamp.companion.R
 import org.matomocamp.companion.adapters.EventsAdapter
-import org.matomocamp.companion.api.FosdemApi
+import org.matomocamp.companion.api.MatomoCampApi
 import org.matomocamp.companion.model.StatusEvent
 import org.matomocamp.companion.viewmodels.LiveViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,7 +23,7 @@ sealed class LiveListFragment(@StringRes private val emptyTextResId: Int,
     : Fragment(R.layout.recyclerview) {
 
     @Inject
-    lateinit var api: FosdemApi
+    lateinit var api: MatomoCampApi
     private val viewModel: LiveViewModel by viewModels({ requireParentFragment() })
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

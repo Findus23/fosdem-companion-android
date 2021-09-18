@@ -13,7 +13,7 @@ import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import org.matomocamp.companion.R
-import org.matomocamp.companion.api.FosdemUrls.localNavigation
+import org.matomocamp.companion.api.MatomoCampUrls.localNavigation
 import org.matomocamp.companion.utils.configureToolbarColors
 import org.matomocamp.companion.utils.invertImageColors
 import org.matomocamp.companion.utils.isLightTheme

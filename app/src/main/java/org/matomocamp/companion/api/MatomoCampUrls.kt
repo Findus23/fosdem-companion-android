@@ -5,10 +5,11 @@ package org.matomocamp.companion.api
  *
  * @author Christophe Beyls
  */
-object FosdemUrls {
+object MatomoCampUrls {
 
     val schedule
-        get() = "https://fosdem.org/schedule/xml"
+//        get() = "https://fosdem.org/schedule/xml"
+          get() = "https://lw1.at/s/tmp/schedule.xml"
     val rooms
         get() = "https://api.fosdem.org/roomstatus/v1/listrooms"
     val localNavigation

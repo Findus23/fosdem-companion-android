@@ -13,7 +13,7 @@ import androidx.core.app.ShareCompat
 import androidx.core.content.ContentProviderCompat
 import org.matomocamp.companion.BuildConfig
 import org.matomocamp.companion.R
-import org.matomocamp.companion.api.FosdemUrls
+import org.matomocamp.companion.api.MatomoCampUrls
 import org.matomocamp.companion.db.BookmarksDao
 import org.matomocamp.companion.db.ScheduleDao
 import org.matomocamp.companion.ical.ICalendarWriter
@@ -150,7 +150,7 @@ class BookmarksExportProvider : ContentProvider() {
             if (event.personsSummary != null) {
                 for (name in event.personsSummary.split(", ")) {
                     val key = "ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN=\"$name\""
-                    val url = FosdemUrls.getPerson(name.toSlug(), year)
+                    val url = MatomoCampUrls.getPerson(name.toSlug(), year)
                     write(key, url)
                 }
             }
