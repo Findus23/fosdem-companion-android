@@ -60,7 +60,7 @@ class TracksListFragment : Fragment(R.layout.recyclerview) {
     private class TracksAdapter(private val day: Day) : ListAdapter<Track, TrackViewHolder>(DIFF_CALLBACK) {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrackViewHolder {
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.simple_list_item_2_material, parent, false)
+            val view = LayoutInflater.from(parent.context).inflate(R.layout.simple_list_item_1_material, parent, false)
             return TrackViewHolder(view)
         }
 
@@ -84,7 +84,6 @@ class TracksListFragment : Fragment(R.layout.recyclerview) {
 
     class TrackViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
         val name: TextView = itemView.findViewById(android.R.id.text1)
-        val type: TextView = itemView.findViewById(android.R.id.text2)
 
         var day: Day? = null
         var track: Track? = null
@@ -97,8 +96,6 @@ class TracksListFragment : Fragment(R.layout.recyclerview) {
             this.day = day
             this.track = track
             name.text = track.name
-            type.setText(track.type.nameResId)
-            type.setTextColor(ContextCompat.getColorStateList(type.context, track.type.textColorResId))
         }
 
         override fun onClick(view: View) {

@@ -39,6 +39,8 @@
     </plurals>
 
     <!-- Live -->
+    <string name="all">All</string>
+    <string name="all_empty">During FOSDEM, the events to come in the next 3 hours will be shown here.</string>
     <string name="next">Next</string>
     <string name="next_empty">During FOSDEM, the events to come in the next 3 hours will be shown here.</string>
     <string name="now">Now</string>

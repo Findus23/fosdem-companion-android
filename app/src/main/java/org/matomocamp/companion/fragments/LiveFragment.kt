@@ -46,17 +46,19 @@ class LiveFragment : Fragment(R.layout.fragment_live), RecycledViewPoolProvider 
 
         private val resources = fragment.resources
 
-        override fun getItemCount() = 2
+        override fun getItemCount() = 3
 
         override fun createFragment(position: Int): Fragment = when (position) {
             0 -> NextLiveListFragment()
             1 -> NowLiveListFragment()
+            2 -> AllLiveListFragment()
             else -> throw IllegalStateException()
         }
 
         fun getPageTitle(position: Int): CharSequence? = when (position) {
             0 -> resources.getString(R.string.next)
             1 -> resources.getString(R.string.now)
+            2 -> resources.getString(R.string.all)
             else -> null
         }
     }

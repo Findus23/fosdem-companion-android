@@ -27,6 +27,10 @@ class LiveViewModel @Inject constructor(scheduleDao: ScheduleDao) : ViewModel() 
         scheduleDao.getEventsInProgress(System.currentTimeMillis()).toLiveData(20)
     }
 
+    val allEvents: LiveData<PagedList<StatusEvent>> = heartbeat.switchMap {
+        scheduleDao.getEvents().toLiveData(20)
+    }
+
     companion object {
         private const val NEXT_EVENTS_INTERVAL = 3L * DateUtils.HOUR_IN_MILLIS
     }
