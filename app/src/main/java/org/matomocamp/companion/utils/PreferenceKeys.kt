@@ -10,6 +10,9 @@ object PreferenceKeys {
     // Android < O only
     const val NOTIFICATIONS_LED = "notifications_led"
     const val NOTIFICATIONS_DELAY = "notifications_delay"
+
+    const val USE_LOCAL_TIMEZONE = "use_local_timezone"
+
     const val ABOUT = "about"
     const val VERSION = "version"
 }

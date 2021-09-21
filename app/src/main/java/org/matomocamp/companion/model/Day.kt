@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
 import org.matomocamp.companion.db.converters.NonNullDateTypeConverters
 import org.matomocamp.companion.utils.DateParceler
-import org.matomocamp.companion.utils.DateUtils.withBelgiumTimeZone
+import org.matomocamp.companion.utils.DateUtils.withMatomoCampTimeZone
 import kotlinx.parcelize.Parcelize
 import kotlinx.parcelize.WriteWith
 import java.text.SimpleDateFormat
@@ -37,6 +37,6 @@ data class Day(
     companion object {
         const val TABLE_NAME = "days"
 
-        private val DAY_DATE_FORMAT = SimpleDateFormat("EEEE", Locale.US).withBelgiumTimeZone()
+        private val DAY_DATE_FORMAT = SimpleDateFormat("EEEE", Locale.US).withMatomoCampTimeZone()
     }
 }

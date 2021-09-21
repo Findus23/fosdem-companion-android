@@ -7,8 +7,8 @@ import org.matomocamp.companion.model.EventDetails
 import org.matomocamp.companion.model.Link
 import org.matomocamp.companion.model.Person
 import org.matomocamp.companion.model.Track
-import org.matomocamp.companion.utils.DateUtils.belgiumTimeZone
-import org.matomocamp.companion.utils.DateUtils.withBelgiumTimeZone
+import org.matomocamp.companion.utils.DateUtils.matomoCampTimeZone
+import org.matomocamp.companion.utils.DateUtils.withMatomoCampTimeZone
 import org.matomocamp.companion.utils.isEndDocument
 import org.matomocamp.companion.utils.isNextEndTag
 import org.matomocamp.companion.utils.isStartTag
@@ -28,9 +28,9 @@ import java.util.Locale
  */
 class EventsParser : Parser<Sequence<DetailedEvent>> {
 
-    private val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.US).withBelgiumTimeZone()
+    private val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.US).withMatomoCampTimeZone()
     // Calendar used to compute the events time, according to Belgium timezone
-    private val calendar = Calendar.getInstance(belgiumTimeZone, Locale.US)
+    private val calendar = Calendar.getInstance(matomoCampTimeZone, Locale.US)
 
     override fun parse(source: BufferedSource): Sequence<DetailedEvent> {
         val parser: XmlPullParser = xmlPullParserFactory.newPullParser().apply {

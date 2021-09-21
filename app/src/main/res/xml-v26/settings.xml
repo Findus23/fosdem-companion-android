@@ -11,6 +11,14 @@
             app:useSimpleSummaryProvider="true" />
     </PreferenceCategory>
 
+    <PreferenceCategory app:title="@string/settings_timezone">
+        <SwitchPreferenceCompat
+            app:defaultValue="false"
+            app:key="use_local_timezone"
+            app:title="@string/settings_timezone_title"
+            app:summary="This only influences the times shown. Thursday/Friday are still shown in the MatomoCamp time zone." />
+    </PreferenceCategory>
+
     <PreferenceCategory app:title="@string/settings_notifications">
         <SwitchPreference
             app:defaultValue="true"

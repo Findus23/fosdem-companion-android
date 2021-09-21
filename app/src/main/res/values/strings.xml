@@ -81,6 +81,8 @@
     <string name="settings">Settings</string>
     <string name="settings_appearance">Appearance</string>
     <string name="settings_appearance_theme_title">Theme</string>
+    <string name="settings_timezone">Time Zones</string>
+    <string name="settings_timezone_title">AAAAAAAA</string>
     <string-array name="settings_appearance_theme_entries">
         <item>System theme</item>
         <item>Light theme</item>
