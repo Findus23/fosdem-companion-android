@@ -2,6 +2,7 @@ package org.matomocamp.companion.api
 
 import android.os.SystemClock
 import android.text.format.DateUtils
+import android.util.Log
 import androidx.annotation.MainThread
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -86,6 +87,7 @@ class MatomoCampApi @Inject constructor(
                 }
             }
         } catch (e: Exception) {
+            Log.e("MatomoCamp", "Download Error", e)
             DownloadScheduleResult.Error
         }
         _downloadScheduleState.value = LoadingState.Idle(SingleEvent(res))

@@ -25,6 +25,11 @@
     </PreferenceCategory>
 
     <PreferenceCategory app:title="@string/settings_notifications">
+        <Preference
+            app:key="pref_static_field_key2"
+            app:selectable="false"
+            app:persistent="false"
+            app:summary="@string/notification_warning"/>
         <SwitchPreference
             app:defaultValue="true"
             app:icon="@drawable/ic_notifications_normal_24dp"

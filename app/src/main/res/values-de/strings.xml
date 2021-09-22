@@ -97,4 +97,5 @@
     <string name="no_data">Keine Daten Verfügbar.</string>
     <string name="website">Webseite</string>
     <string name="open_in_webbrowser">Im Webbrowser öffnen</string>
+    <string name="notification_warning">Abhängig von der Android Version und Energieoptionen werden Benachrichtigungen möglicherweise nicht zuverlässig zugestellt.</string>
 </resources>

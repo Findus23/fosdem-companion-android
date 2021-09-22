@@ -95,6 +95,7 @@
         <item>2</item>
     </string-array>
     <string name="settings_notifications">Notifications</string>
+    <string name="notification_warning">Depending on your Android version and Energy settings, notifications might not be reliably delivered.</string>
     <string name="settings_notifications_enabled_title">Enable notifications</string>
     <string name="settings_notifications_enabled_summary">If checked, this will notify you of upcoming bookmarked events</string>
     <string name="settings_notifications_channel_title">Customize</string>

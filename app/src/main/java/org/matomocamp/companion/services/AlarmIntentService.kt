@@ -1,5 +1,6 @@
 package org.matomocamp.companion.services
 
+import android.annotation.SuppressLint
 import android.app.AlarmManager
 import android.app.Notification
 import android.app.NotificationChannel
@@ -59,11 +60,16 @@ class AlarmIntentService : JobIntentService() {
         getSystemService()!!
     }
 
+    @SuppressLint("UnspecifiedImmutableFlag")
     private fun getAlarmPendingIntent(eventId: Long): PendingIntent {
         val intent = Intent(this, AlarmReceiver::class.java)
                 .setAction(AlarmReceiver.ACTION_NOTIFY_EVENT)
                 .setData(eventId.toString().toUri())
-        return PendingIntent.getBroadcast(this, 0, intent, 0)
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
+        } else {
+            PendingIntent.getActivity(this, 0, intent, 0)
+        }
     }
 
     override fun onHandleWork(intent: Intent) {
