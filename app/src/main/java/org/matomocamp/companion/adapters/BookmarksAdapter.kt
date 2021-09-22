@@ -124,7 +124,7 @@ class BookmarksAdapter(context: Context, private val multiChoiceHelper: MultiCho
             persons.isGone = personsSummary.isNullOrEmpty()
             val track = event.track
             trackName.text = track.name
-            trackName.setTextColor(ContextCompat.getColorStateList(context, track.type.textColorResId))
+            trackName.setTextColor(ContextCompat.getColorStateList(context, track.textColorResId))
             trackName.contentDescription = context.getString(R.string.track_content_description, track.name)
         }
 

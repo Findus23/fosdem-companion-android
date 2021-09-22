@@ -58,12 +58,12 @@ class TrackScheduleActivity : AppCompatActivity(R.layout.track_schedule), Create
         title = "$track, $day"
         val trackType = track.type
         if (isLightTheme) {
-            window.statusBarColorCompat = ContextCompat.getColor(this, trackType.statusBarColorResId)
-            val trackAppBarColor = ContextCompat.getColorStateList(this, trackType.appBarColorResId)!!
+            window.statusBarColorCompat = ContextCompat.getColor(this, track.statusBarColorResId)
+            val trackAppBarColor = ContextCompat.getColorStateList(this, track.appBarColorResId)!!
             setTaskColorPrimary(trackAppBarColor.defaultColor)
             toolbar.tintBackground(trackAppBarColor)
         } else {
-            val trackTextColor = ContextCompat.getColorStateList(this, trackType.textColorResId)!!
+            val trackTextColor = ContextCompat.getColorStateList(this, track.textColorResId)!!
             toolbar.setTitleTextColor(trackTextColor)
         }
 

@@ -40,6 +40,7 @@ data class Track(
 
     override fun toString() = name
 
+
     override fun hashCode(): Int {
         val prime = 31
         var result = 1
@@ -57,4 +58,34 @@ data class Track(
     companion object {
         const val TABLE_NAME = "tracks"
     }
+
+    val appBarColorResId: Int
+        get() = when (name) {
+            "Privacy" -> R.color.track_privacy
+            "System Administration" -> R.color.track_system_administration
+            "Contributing" -> R.color.track_contributing
+            "Digital Analytics" -> R.color.track_digital_analytics
+            "Using Matomo" -> R.color.track_using_matomo
+            "Business" -> R.color.track_business
+            "Use Cases" -> R.color.track_business
+            "MatomoCamp" -> R.color.track_business
+            else -> R.color.track_other
+        }
+
+    val textColorResId: Int
+        get() = appBarColorResId
+
+    val statusBarColorResId: Int
+        get() = when (name) {
+            "Privacy" -> R.color.track_privacy_dark
+            "System Administration" -> R.color.track_system_administration_dark
+            "Contributing" -> R.color.track_contributing_dark
+            "Digital Analytics" -> R.color.track_digital_analytics_dark
+            "Using Matomo" -> R.color.track_using_matomo_dark
+            "Business" -> R.color.track_business_dark
+            "Use Cases" -> R.color.track_business_dark
+            "MatomoCamp" -> R.color.track_business_dark
+            else -> R.color.track_other_dark
+
+        }
 }

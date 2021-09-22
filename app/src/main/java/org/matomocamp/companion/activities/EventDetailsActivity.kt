@@ -106,12 +106,12 @@ class EventDetailsActivity : AppCompatActivity(R.layout.single_event), CreateNfc
 
         val trackType = event.track.type
         if (isLightTheme) {
-            window.statusBarColorCompat = ContextCompat.getColor(this, trackType.statusBarColorResId)
-            val trackAppBarColor = ContextCompat.getColorStateList(this, trackType.appBarColorResId)!!
+            window.statusBarColorCompat = ContextCompat.getColor(this, event.track.statusBarColorResId)
+            val trackAppBarColor = ContextCompat.getColorStateList(this, event.track.appBarColorResId)!!
             setTaskColorPrimary(trackAppBarColor.defaultColor)
             findViewById<View>(R.id.appbar).tintBackground(trackAppBarColor)
         } else {
-            val trackTextColor = ContextCompat.getColorStateList(this, trackType.textColorResId)!!
+            val trackTextColor = ContextCompat.getColorStateList(this, event.track.textColorResId)!!
             toolbar.setTitleTextColor(trackTextColor)
         }
 
