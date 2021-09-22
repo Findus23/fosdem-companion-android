@@ -21,7 +21,6 @@
     <string name="menu_bookmarks">Bookmarks</string>
     <string name="menu_live">Live</string>
     <string name="menu_speakers">Speakers</string>
-    <string name="menu_map">Map</string>
 
     <!-- Bookmarks -->
     <string name="filter">Filter</string>
@@ -40,24 +39,24 @@
 
     <!-- Live -->
     <string name="all">All</string>
-    <string name="all_empty">During MatomoCamp, the events to come in the next 3 hours will be shown here.</string>
+    <string name="all_empty">All events are shown here.</string>
     <string name="next">Next</string>
     <string name="next_empty">During MatomoCamp, the events to come in the next 3 hours will be shown here.</string>
     <string name="now">Now</string>
     <string name="now_empty">During MatomoCamp, the events in progress will be shown here.</string>
 
     <!-- Track types -->
-    <string name="other">Other</string>
-    <string name="keynote">Keynote</string>
-    <string name="main_track">Main track</string>
-    <string name="developer_room">Developer room</string>
-    <string name="lightning_talk">Lightning talk</string>
-    <string name="certification_exam">Certification Exam</string>
+    <string translatable="false" name="other">Other</string>
+    <string translatable="false" name="keynote">Keynote</string>
+    <string translatable="false" name="main_track">Main track</string>
+    <string translatable="false" name="developer_room">Developer room</string>
+    <string translatable="false" name="lightning_talk">Lightning talk</string>
+    <string translatable="false" name="certification_exam">Certification Exam</string>
 
     <!-- Room statuses -->
-    <string name="room_status_open">Open</string>
-    <string name="room_status_full">Full</string>
-    <string name="room_status_emergency_evacuation">Emergency evacuation</string>
+    <string translatable="false" name="room_status_open">Open</string>
+    <string translatable="false" name="room_status_full">Full</string>
+    <string translatable="false" name="room_status_emergency_evacuation">Emergency evacuation</string>
 
     <!-- Search -->
     <string name="search_events">Search events</string>
@@ -66,10 +65,10 @@
     <string name="no_search_result">No result.</string>
 
     <!-- External bookmarks -->
-    <string name="external_bookmarks_title">External bookmarks</string>
-    <string name="external_bookmarks_add_all">Add all</string>
-    <string name="external_bookmarks_add_all_confirmation_title">Confirmation</string>
-    <string name="external_bookmarks_add_all_confirmation_text">Add all events to your local bookmarks?</string>
+    <string translatable="false" name="external_bookmarks_title">External bookmarks</string>
+    <string translatable="false" name="external_bookmarks_add_all">Add all</string>
+    <string translatable="false" name="external_bookmarks_add_all_confirmation_title">Confirmation</string>
+    <string translatable="false" name="external_bookmarks_add_all_confirmation_text">Add all events to your local bookmarks?</string>
 
     <!-- Errors -->
     <string name="event_not_found_error">Unable to load the session details.\nMake sure the database has been updated to the latest version.</string>
@@ -82,7 +81,9 @@
     <string name="settings_appearance">Appearance</string>
     <string name="settings_appearance_theme_title">Theme</string>
     <string name="settings_timezone">Time Zones</string>
-    <string name="settings_timezone_title">AAAAAAAA</string>
+    <string name="settings_timezone_title">Display times in local time zone</string>
+    <string name="settings_timezone_text">MatomoCamp is organized in Central European Time ("Europe/Berlin"). If you are in another time zone, please pay attention to when events start for you. You can enable the below setting to display times in this app in your local time zone. But keep in mind that this feature is experimental and might show incorrect results.</string>
+    <string name="settings_timezone_summary">This only influences the times shown. Thursday/Friday are still shown in the MatomoCamp time zone.</string>
     <string-array name="settings_appearance_theme_entries">
         <item>System theme</item>
         <item>Light theme</item>
@@ -127,7 +128,7 @@
 
     <!-- Event details -->
     <string name="event_details">Event details</string>
-    <string name="room_building">%1$s (Building %2$s)</string>
+    <string translatable="false" name="room_building">%1$s (Building %2$s)</string>
     <string name="track_content_description">Track: %1$s</string>
     <string name="time_content_description">Time: %1$s</string>
     <string name="room_content_description">Room: %1$s</string>
@@ -138,24 +139,24 @@
     <string name="remove_bookmark">Remove from bookmarks</string>
     <string name="share">Share</string>
     <string name="add_to_agenda">Add to agenda</string>
+    <string name="open_in_webbrowser">Open in web browser</string>
     <string name="calendar_not_found">No compatible calendar application found.</string>
 
     <plurals name="speakers">
         <item quantity="one">Speaker</item>
         <item quantity="other">Speakers</item>
     </plurals>
-
     <!-- Speaker info -->
     <string name="talks_header">Talks</string>
     <string name="more_info">More info</string>
 
     <!-- Others -->
-    <string name="room_map">Room map</string>
-    <string name="directions">Directions to ULB</string>
-    <string name="navigation">On-site navigation</string>
+    <string translatable="false" name="room_map">Room map</string>
+    <string translatable="false" name="directions">Directions to ULB</string>
+    <string translatable="false" name="navigation">On-site navigation</string>
     <string name="no_data">No data available.</string>
     <string name="website">Website</string>
-    <string name="about_text">Programmed by <a href="https://www.digitalia.be/">Christophe Beyls</a>.
+    <string translatable="false" name="about_text">Programmed by <a href="https://www.digitalia.be/">Christophe Beyls</a>.
 \nBased on <a href="https://github.com/cbeyls/fosdem-companion-android">FOSDEM Companion</a>
 and adapted to MatomoCamp by <a href="https://lw1.at/">Lukas Winkler</a>.
 \n

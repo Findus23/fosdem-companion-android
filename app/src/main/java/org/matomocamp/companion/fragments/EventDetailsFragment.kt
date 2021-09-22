@@ -3,12 +3,14 @@ package org.matomocamp.companion.fragments
 import android.annotation.SuppressLint
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.provider.CalendarContract
 import android.text.SpannableString
 import android.text.TextPaint
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
+import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -45,6 +47,7 @@ import org.matomocamp.companion.utils.stripHtml
 import org.matomocamp.companion.viewmodels.EventDetailsViewModel
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
+import org.matomocamp.companion.api.MatomoCampUrls
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -197,12 +200,32 @@ class EventDetailsFragment : Fragment(R.layout.fragment_event_details) {
                 .createChooserIntent()
     }
 
+
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.add_to_agenda -> {
             addToAgenda()
             true
         }
+        R.id.open_in_webbrowser -> {
+            openInWebbrowser()
+            true
+        }
         else -> false
+    }
+
+    private fun openInWebbrowser(){
+        Log.i("Bla","open in web browser")
+        try {
+            val context=activity
+            if (context != null) {
+                CustomTabsIntent.Builder()
+                        .configureToolbarColors(context, R.color.light_color_primary)
+                        .build()
+                        .launchUrl(context, Uri.parse(event.url))
+            }
+        } catch (ignore: ActivityNotFoundException) {
+        }
+
     }
 
     private fun addToAgenda() {
@@ -304,8 +327,6 @@ class EventDetailsFragment : Fragment(R.layout.fragment_event_details) {
                 CustomTabsIntent.Builder()
                         .configureToolbarColors(context, event.track.appBarColorResId)
                         .setShowTitle(true)
-                        .setStartAnimations(context, R.anim.slide_in_right, R.anim.slide_out_left)
-                        .setExitAnimations(context, R.anim.slide_in_left, R.anim.slide_out_right)
                         .build()
                         .launchUrl(context, link.url.toUri())
             } catch (ignore: ActivityNotFoundException) {

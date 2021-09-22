@@ -14,10 +14,10 @@ android {
         applicationId "org.matomocamp.fosdem"
         minSdkVersion 17
         targetSdkVersion 31
-        versionCode 1700205
-        versionName "2.0.5"
+        versionCode 1800000
+        versionName "3.0.0"
         // Supported languages
-        resConfigs "en"
+        resConfigs "en", "de", "fr"
         vectorDrawables.useSupportLibrary = true
 
         javaCompileOptions {
@@ -93,8 +93,8 @@ dependencies {
     implementation 'androidx.paging:paging-runtime-ktx:2.1.2'
     implementation "androidx.room:room-ktx:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
-    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
-    implementation ("com.squareup.okhttp3:okhttp-tls:$okhttp_version") {
+    implementation "com.squareup.okhttp3:okhttp:3.12.13"
+    implementation ("com.squareup.okhttp3:okhttp-tls:3.12.13") {
         exclude group: 'org.bouncycastle', module: 'bcprov-jdk15on'
     }
     implementation 'com.squareup.okio:okio:2.10.0'

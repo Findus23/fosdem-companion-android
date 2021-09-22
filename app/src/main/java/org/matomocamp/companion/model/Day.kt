@@ -1,6 +1,7 @@
 package org.matomocamp.companion.model
 
 import android.os.Parcelable
+import androidx.core.os.ConfigurationCompat
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
@@ -23,7 +24,9 @@ data class Day(
 ) : Comparable<Day>, Parcelable {
 
     val name: String
-        get() = "Day $index (${DAY_DATE_FORMAT.format(date)})"
+        get() {
+            return "Day $index (${DAY_DATE_FORMAT.format(date)})"
+        }
 
     val shortName: String
         get() = DAY_DATE_FORMAT.format(date)

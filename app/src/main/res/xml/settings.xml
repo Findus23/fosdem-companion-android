@@ -12,11 +12,16 @@
     </PreferenceCategory>
 
     <PreferenceCategory app:title="@string/settings_timezone">
+        <Preference
+            app:key="pref_static_field_key"
+            app:selectable="false"
+            app:persistent="false"
+            app:summary="@string/settings_timezone_text"/>
         <SwitchPreferenceCompat
             app:defaultValue="false"
             app:key="use_local_timezone"
             app:title="@string/settings_timezone_title"
-            app:summary="TEST" />
+            app:summary="@string/settings_timezone_summary" />
     </PreferenceCategory>
 
     <PreferenceCategory app:title="@string/settings_notifications">

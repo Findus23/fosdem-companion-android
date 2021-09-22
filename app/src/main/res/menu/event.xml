@@ -14,5 +14,11 @@
         android:title="@string/add_to_agenda"
         app:iconTint="?colorControlNormal"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/open_in_webbrowser"
+        android:icon="@drawable/ic_baseline_open_in_browser_24"
+        android:title="@string/open_in_webbrowser"
+        app:iconTint="?colorControlNormal"
+        app:showAsAction="ifRoom" />
 
 </menu>

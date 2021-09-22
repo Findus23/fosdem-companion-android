@@ -40,8 +40,6 @@ class PersonInfoActivity : AppCompatActivity(R.layout.person_info) {
                 try {
                     CustomTabsIntent.Builder()
                             .configureToolbarColors(this, R.color.light_color_primary)
-                            .setStartAnimations(this, R.anim.slide_in_right, R.anim.slide_out_left)
-                            .setExitAnimations(this, R.anim.slide_in_left, R.anim.slide_out_right)
                             .build()
                             .launchUrl(this, Uri.parse(url))
                 } catch (ignore: ActivityNotFoundException) {
