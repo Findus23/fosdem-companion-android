@@ -36,18 +36,15 @@ class PersonInfoActivity : AppCompatActivity(R.layout.person_info) {
             // Look for the first non-placeholder event in the paged list
             val statusEvent = viewModel.events.value?.firstOrNull { it != null }
             if (statusEvent != null) {
-                val year = DateUtils.getYear(statusEvent.event.day.date.time)
-                val url = person.getUrl(year)
-                if (url != null) {
-                    try {
-                        CustomTabsIntent.Builder()
-                                .configureToolbarColors(this, R.color.light_color_primary)
-                                .setStartAnimations(this, R.anim.slide_in_right, R.anim.slide_out_left)
-                                .setExitAnimations(this, R.anim.slide_in_left, R.anim.slide_out_right)
-                                .build()
-                                .launchUrl(this, Uri.parse(url))
-                    } catch (ignore: ActivityNotFoundException) {
-                    }
+                val url = person.getUrl()
+                try {
+                    CustomTabsIntent.Builder()
+                            .configureToolbarColors(this, R.color.light_color_primary)
+                            .setStartAnimations(this, R.anim.slide_in_right, R.anim.slide_out_left)
+                            .setExitAnimations(this, R.anim.slide_in_left, R.anim.slide_out_right)
+                            .build()
+                            .launchUrl(this, Uri.parse(url))
+                } catch (ignore: ActivityNotFoundException) {
                 }
             }
         }

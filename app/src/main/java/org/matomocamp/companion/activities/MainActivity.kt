@@ -315,12 +315,12 @@ class MainActivity : AppCompatActivity(R.layout.main), CreateNfcAppDataCallback 
                     startActivity(Intent(this, SettingsActivity::class.java))
                     overridePendingTransition(R.anim.slide_in_right, R.anim.partial_zoom_out)
                 }
-                R.id.menu_volunteer -> try {
+                R.id.menu_website -> try {
                     CustomTabsIntent.Builder()
                             .configureToolbarColors(this, R.color.light_color_primary)
                             .setShowTitle(true)
                             .build()
-                            .launchUrl(this, Uri.parse(MatomoCampUrls.volunteer))
+                            .launchUrl(this, Uri.parse(MatomoCampUrls.website))
                 } catch (ignore: ActivityNotFoundException) {
                 }
             }

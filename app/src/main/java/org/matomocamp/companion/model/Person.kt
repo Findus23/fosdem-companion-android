@@ -19,9 +19,8 @@ data class Person(
         val name: String?
 ) : Parcelable {
 
-    fun getUrl(year: Int): String? {
-        val n = name ?: return null
-        return MatomoCampUrls.getPerson(n.toSlug(), year)
+    fun getUrl(): String {
+        return MatomoCampUrls.getPerson(id)
     }
 
     override fun toString(): String = name ?: ""
