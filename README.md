@@ -16,9 +16,6 @@ Add [`https://fdroid.matomocamp.org/fdroid`](https://fdroid.matomocamp.org/fdroi
 
 [Direct API download](https://fdroid.matomocamp.org/fdroid/MatomoCampCompanion.apk)
 
-
-https://fdroid.matomocamp.org/fdroid/MatomoCampCompanion.apk
-
 This is a modification of the "FOSDEM Companion for Android" by Christophe Beyls to be used in MatomoCamp by Lukas Winkler.
 
 The text below refers to the original app:
