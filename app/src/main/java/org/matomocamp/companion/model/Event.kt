@@ -26,6 +26,7 @@ data class Event(
         @ColumnInfo(name = "room_name")
         val roomName: String?,
         val slug: String?,
+        val url: String?,
         val title: String?,
         @ColumnInfo(name = "subtitle")
         val subTitle: String?,
@@ -50,11 +51,6 @@ data class Event(
             0
         } else ((endTime.time - startTime.time) / android.text.format.DateUtils.MINUTE_IN_MILLIS).toInt()
 
-    val url: String?
-        get() {
-            val s = slug ?: return null
-            return MatomoCampUrls.getEvent(s, DateUtils.getYear(day.date.time))
-        }
 
     override fun toString(): String = title ?: ""
 }

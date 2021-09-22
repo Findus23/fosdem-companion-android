@@ -25,7 +25,7 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object DatabaseModule {
-    private const val DB_FILE = "fosdem.sqlite"
+    private const val DB_FILE = "matomocamp.sqlite"
     private const val DB_PREFS_FILE = "database"
 
     @Provides
@@ -40,7 +40,7 @@ object DatabaseModule {
         val MIGRATION_1_2 = object : Migration(1, 2) {
             override fun migrate(database: SupportSQLiteDatabase) = with(database) {
                 // Events: make primary key and track_id not null
-                execSQL("CREATE TABLE tmp_${EventEntity.TABLE_NAME} (id INTEGER PRIMARY KEY NOT NULL, day_index INTEGER NOT NULL, start_time INTEGER, end_time INTEGER, room_name TEXT, slug TEXT, track_id INTEGER NOT NULL, abstract TEXT, description TEXT)")
+                execSQL("CREATE TABLE tmp_${EventEntity.TABLE_NAME} (id INTEGER PRIMARY KEY NOT NULL, day_index INTEGER NOT NULL, start_time INTEGER, end_time INTEGER, room_name TEXT, slug TEXT, url TEXT, track_id INTEGER NOT NULL, abstract TEXT, description TEXT)")
                 execSQL("INSERT INTO tmp_${EventEntity.TABLE_NAME} SELECT * FROM ${EventEntity.TABLE_NAME}")
                 execSQL("DROP TABLE ${EventEntity.TABLE_NAME}")
                 execSQL("ALTER TABLE tmp_${EventEntity.TABLE_NAME} RENAME TO ${EventEntity.TABLE_NAME}")

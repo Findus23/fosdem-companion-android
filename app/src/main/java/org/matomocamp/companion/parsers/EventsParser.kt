@@ -68,6 +68,7 @@ class EventsParser : Parser<Sequence<DetailedEvent>> {
         var startTime: Date? = null
         var duration: String? = null
         var slug: String? = null
+        var url: String? = null
         var title: String? = null
         var subTitle: String? = null
         var trackName = ""
@@ -93,6 +94,7 @@ class EventsParser : Parser<Sequence<DetailedEvent>> {
                     }
                     "duration" -> duration = parser.nextText()
                     "slug" -> slug = parser.nextText()
+                    "url" -> url = parser.nextText()
                     "title" -> title = parser.nextText()
                     "subtitle" -> subTitle = parser.nextText()
                     "track" -> trackName = parser.nextText()
@@ -142,6 +144,7 @@ class EventsParser : Parser<Sequence<DetailedEvent>> {
                 startTime = startTime,
                 endTime = endTime,
                 slug = slug,
+                url = url,
                 title = title,
                 subTitle = subTitle,
                 track = Track(name = trackName, type = trackType),
