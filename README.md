@@ -1,19 +1,26 @@
-[![Build Status](https://travis-ci.com/cbeyls/fosdem-companion-android.svg?branch=master)](https://travis-ci.com/cbeyls/fosdem-companion-android)
+[![Build Status](https://api.travis-ci.com/MatomoCamp/matomocamp-companion-android.svg?branch=master)](https://app.travis-ci.com/github/MatomoCamp/matomocamp-companion-android)
 
-# FOSDEM Companion
+# MatomoCamp Companion
 
-Advanced native Android schedule browser application for the [FOSDEM](http://fosdem.org/) conference in Brussels, Belgium.
+Advanced native Android schedule browser application for the [MatomoCamp](https://matomocamp.org/) conference.
+
+
+[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
+     alt="Get it on Google Play"
+     height="80">](https://play.google.com/store/apps/details?id=org.matomocamp.companion)
+
+
+This is a modification of the "FOSDEM Companion for Android" by Christophe Beyls to be used in MatomoCamp by Lukas Winkler.
+
+The text below refers to the original app:
+
+-----------------
 
 This is a new implementation of the [legacy FOSDEM app](https://github.com/rkallensee/fosdem-android/). The code has been rewritten from scratch and the features have been extended. It is built on top of the latest [Jetpack](https://developer.android.com/jetpack/) libraries by Google.
 
+
 The name FOSDEM and the gear logo are registered trademarks of FOSDEM VZW. Used with permission.
 
-[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
-     alt="Get it on F-Droid"
-   height="80">](https://f-droid.org/packages/be.digitalia.fosdem/)
-[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
-     alt="Get it on Google Play"
-     height="80">](https://play.google.com/store/apps/details?id=be.digitalia.fosdem)
 
 ## How to build
 
