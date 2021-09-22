@@ -71,7 +71,6 @@ class TrackScheduleEventActivity : AppCompatActivity(R.layout.track_schedule_eve
             subtitle = day.toString()
         }
         title = "$track, $day"
-        val trackType = track.type
         if (isLightTheme) {
             window.statusBarColorCompat = ContextCompat.getColor(this, track.statusBarColorResId)
             val trackAppBarColor = ContextCompat.getColorStateList(this, track.appBarColorResId)!!

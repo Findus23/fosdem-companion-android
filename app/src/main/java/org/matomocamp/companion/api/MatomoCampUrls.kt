@@ -19,7 +19,7 @@ object MatomoCampUrls {
         return "https://schedule.matomocamp.org/matomocamp-2021/speaker/by-id/$id/"
     }
 
-    fun getLocalNavigationToLocation(locationSlug: String): String {
+    fun getLocalNavigationToLocation(): String {
         return "https://matomocamp.org/"
     }
 }

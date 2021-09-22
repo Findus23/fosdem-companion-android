@@ -104,7 +104,6 @@ class EventDetailsActivity : AppCompatActivity(R.layout.single_event), CreateNfc
             title = event.track.name
         }
 
-        val trackType = event.track.type
         if (isLightTheme) {
             window.statusBarColorCompat = ContextCompat.getColor(this, event.track.statusBarColorResId)
             val trackAppBarColor = ContextCompat.getColorStateList(this, event.track.appBarColorResId)!!

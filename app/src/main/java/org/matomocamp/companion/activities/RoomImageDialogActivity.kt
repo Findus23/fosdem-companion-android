@@ -62,7 +62,7 @@ class RoomImageDialogActivity : AppCompatActivity(R.layout.dialog_room_image) {
                 toolbar.setOnMenuItemClickListener { item ->
                     when (item.itemId) {
                         R.id.navigation -> {
-                            val localNavigationUrl = MatomoCampUrls.getLocalNavigationToLocation(roomName.toSlug())
+                            val localNavigationUrl = MatomoCampUrls.getLocalNavigationToLocation()
                             try {
                                 CustomTabsIntent.Builder()
                                         .configureToolbarColors(context, R.color.light_color_primary)
