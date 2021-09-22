@@ -191,7 +191,7 @@ class AlarmIntentService : JobIntentService() {
         val notificationColor = ContextCompat.getColor(this, R.color.light_color_primary)
 
         val notificationBuilder = NotificationCompat.Builder(this, NOTIFICATION_CHANNEL)
-                .setSmallIcon(R.drawable.ic_stat_fosdem)
+                .setSmallIcon(R.drawable.ic_stat_matomo)
                 .setColor(notificationColor)
                 .setWhen(event.startTime?.time ?: System.currentTimeMillis())
                 .setContentTitle(event.title)
