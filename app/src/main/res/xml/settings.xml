@@ -3,7 +3,7 @@
 
     <PreferenceCategory app:title="@string/settings_appearance">
         <ListPreference
-            app:defaultValue="-1"
+            app:defaultValue="1"
             app:entries="@array/settings_appearance_theme_entries"
             app:entryValues="@array/settings_appearance_theme_values"
             app:key="theme"
