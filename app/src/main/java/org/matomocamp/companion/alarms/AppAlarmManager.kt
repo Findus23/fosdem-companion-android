@@ -253,7 +253,7 @@ class AppAlarmManager @Inject constructor(
         val notificationColor = ContextCompat.getColor(context, R.color.light_color_primary)
 
         val notificationBuilder = NotificationCompat.Builder(context, NOTIFICATION_CHANNEL)
-            .setSmallIcon(R.drawable.ic_stat_fosdem)
+            .setSmallIcon(R.drawable.ic_stat_matomo)
             .setColor(notificationColor)
             .setWhen(event.startTime?.toEpochMilli() ?: System.currentTimeMillis())
             .setContentTitle(event.title)

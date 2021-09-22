@@ -19,6 +19,6 @@ object MatomoCampUrls {
     }
 
     fun getLocalNavigationToLocation(locationSlug: String): String {
-        return "https://nav.fosdem.org/d/$locationSlug/"
+        return "https://matomocamp.org/"
     }
 }
