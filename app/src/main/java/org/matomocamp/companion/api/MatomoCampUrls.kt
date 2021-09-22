@@ -9,7 +9,7 @@ object MatomoCampUrls {
 
     val schedule
 //        get() = "https://fosdem.org/schedule/xml"
-          get() = "https://lw1.at/s/tmp/schedule.xml"
+          get() = "https://schedule.matomocamp.org/matomocamp-2021//schedule/export/schedule.xml"
     val rooms
         get() = "https://api.fosdem.org/roomstatus/v1/listrooms"
     val localNavigation
