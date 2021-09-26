@@ -14,7 +14,7 @@ Advanced native Android schedule browser application for the [MatomoCamp](https:
 
 Add [`https://fdroid.matomocamp.org/fdroid`](https://fdroid.matomocamp.org/fdroid) as a package repostiory in F-Droid.
 
-[Direct API download](https://fdroid.matomocamp.org/fdroid/MatomoCampCompanion.apk)
+[Direct APK download](https://fdroid.matomocamp.org/fdroid/MatomoCampCompanion.apk)
 
 This is a modification of the "FOSDEM Companion for Android" by Christophe Beyls to be used in MatomoCamp by Lukas Winkler.
 
