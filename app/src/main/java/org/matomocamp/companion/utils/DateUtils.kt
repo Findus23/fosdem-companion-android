@@ -9,9 +9,8 @@ import java.util.TimeZone
 
 object DateUtils {
     val matomoCampTimeZone: TimeZone = TimeZone.getTimeZone("Europe/Berlin")
-    val localTimeZone: TimeZone = TimeZone.getDefault()
 
-    val localOffset = localTimeZone.getOffset(2021, 11, 5, 0, 0, 0)
+    val localOffset = TimeZone.getDefault().getOffset(2021, 11, 5, 0, 0, 0)
     val matomoCampOffset = matomoCampTimeZone.getOffset(2021, 11, 5, 0, 0, 0)
 
     fun DateFormat.withMatomoCampTimeZone(): DateFormat {
@@ -20,7 +19,7 @@ object DateUtils {
     }
 
     fun DateFormat.withLocalTimeZone(): DateFormat {
-        timeZone = localTimeZone
+        timeZone = TimeZone.getDefault()
         return this
     }
 
