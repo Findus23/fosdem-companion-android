@@ -14,8 +14,8 @@ android {
         applicationId "org.matomocamp.companion"
         minSdkVersion 21
         targetSdkVersion 31
-        versionCode 1800001
-        versionName "3.0.1"
+        versionCode 1800002
+        versionName "3.0.2"
         // Supported languages
         resConfigs "en", "de", "fr"
         vectorDrawables.useSupportLibrary = true
