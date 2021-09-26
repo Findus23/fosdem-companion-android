@@ -109,65 +109,10 @@ class MatomoCampApi @Inject constructor(
             }
             scheduler(*startEndTimestamps)
         }
-        val liveRoomStatuses = buildLiveRoomStatusesLiveData()
-        val offlineRoomStatuses = MutableLiveData(emptyMap<String, RoomStatus>())
-        scheduler.switchMap { isLive -> if (isLive) liveRoomStatuses else offlineRoomStatuses }
         // Implementors: replace the above code block with the next line to disable room status support
-        // MutableLiveData()
+         MutableLiveData()
     }
 
-    /**
-     * Builds a LiveData instance which loads and refreshes the Room statuses during the event.
-     */
-    private fun buildLiveRoomStatusesLiveData(): LiveData<Map<String, RoomStatus>> {
-        var nextRefreshTime = 0L
-        var expirationTime = Long.MAX_VALUE
-        var retryAttempt = 0
-
-        return liveData {
-            var now = SystemClock.elapsedRealtime()
-            var nextRefreshDelay = nextRefreshTime - now
-
-            if (now > expirationTime && latestValue?.isEmpty() == false) {
-                // When the data expires, replace it with an empty value
-                emit(emptyMap())
-            }
-
-            while (true) {
-                if (nextRefreshDelay > 0) {
-                    delay(nextRefreshDelay)
-                }
-
-                nextRefreshDelay = try {
-                    val response = httpClient.get(MatomoCampUrls.rooms) { body, _ ->
-                        RoomStatusesParser().parse(body.source())
-                    }
-                    now = SystemClock.elapsedRealtime()
-
-                    retryAttempt = 0
-                    expirationTime = now + ROOM_STATUS_EXPIRATION_DELAY
-                    emit(response.body)
-                    ROOM_STATUS_REFRESH_DELAY
-                } catch (e: Exception) {
-                    if (e is CancellationException) {
-                        throw e
-                    }
-                    now = SystemClock.elapsedRealtime()
-
-                    if (now > expirationTime && latestValue?.isEmpty() == false) {
-                        emit(emptyMap())
-                    }
-
-                    // Use exponential backoff for retries
-                    val multiplier = 2.0.pow(retryAttempt).toLong()
-                    retryAttempt++
-                    (ROOM_STATUS_FIRST_RETRY_DELAY * multiplier).coerceAtMost(ROOM_STATUS_REFRESH_DELAY)
-                }
-
-                nextRefreshTime = now + nextRefreshDelay
-            }
-        }
-    }
 
     companion object {
         // 8:30 (local time)
@@ -175,8 +120,5 @@ class MatomoCampApi @Inject constructor(
 
         // 19:00 (local time)
         private const val DAY_END_TIME = 19 * DateUtils.HOUR_IN_MILLIS
-        private const val ROOM_STATUS_REFRESH_DELAY = 90L * DateUtils.SECOND_IN_MILLIS
-        private const val ROOM_STATUS_FIRST_RETRY_DELAY = 30L * DateUtils.SECOND_IN_MILLIS
-        private const val ROOM_STATUS_EXPIRATION_DELAY = 6L * DateUtils.MINUTE_IN_MILLIS
     }
 }
