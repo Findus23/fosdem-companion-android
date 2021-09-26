@@ -11,11 +11,11 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "org.matomocamp.fosdem"
+        applicationId "org.matomocamp.companion"
         minSdkVersion 21
         targetSdkVersion 31
-        versionCode 1800000
-        versionName "3.0.0"
+        versionCode 1800001
+        versionName "3.0.1"
         // Supported languages
         resConfigs "en", "de", "fr"
         vectorDrawables.useSupportLibrary = true
