@@ -12,7 +12,7 @@ Advanced native Android schedule browser application for the [MatomoCamp](https:
 ### Get it from our F-Droid repository
 ![F-Droid repo](https://fdroid.matomocamp.org/fdroid/repo/icons/icon.png)
 
-Add [`https://fdroid.matomocamp.org/fdroid`](https://fdroid.matomocamp.org/fdroid) as a package repostiory in F-Droid.
+Add [`https://fdroid.matomocamp.org/fdroid`](https://fdroid.matomocamp.org/fdroid) as a package repository in F-Droid.
 
 [Direct APK download](https://fdroid.matomocamp.org/fdroid/MatomoCampCompanion.apk)
 
