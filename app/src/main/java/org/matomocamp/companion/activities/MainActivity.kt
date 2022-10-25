@@ -1,11 +1,9 @@
 package org.matomocamp.companion.activities
 
 import android.annotation.SuppressLint
-import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.drawable.Animatable
-import android.net.Uri
 import android.nfc.NdefRecord
 import android.os.Bundle
 import android.view.KeyEvent
@@ -16,7 +14,6 @@ import android.widget.TextView
 import androidx.annotation.IdRes
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.browser.customtabs.CustomTabsIntent
 import androidx.core.content.edit
 import androidx.core.view.ViewCompat
 import androidx.core.view.isInvisible
@@ -27,18 +24,15 @@ import androidx.lifecycle.lifecycleScope
 import org.matomocamp.companion.BuildConfig
 import org.matomocamp.companion.R
 import org.matomocamp.companion.api.MatomoCampApi
-import org.matomocamp.companion.api.MatomoCampUrls
 import org.matomocamp.companion.db.ScheduleDao
 import org.matomocamp.companion.fragments.BookmarksListFragment
 import org.matomocamp.companion.fragments.LiveFragment
-import org.matomocamp.companion.fragments.MapFragment
 import org.matomocamp.companion.fragments.PersonsListFragment
 import org.matomocamp.companion.fragments.TracksFragment
 import org.matomocamp.companion.model.DownloadScheduleResult
 import org.matomocamp.companion.model.LoadingState
 import org.matomocamp.companion.utils.CreateNfcAppDataCallback
 import org.matomocamp.companion.utils.awaitCloseDrawer
-import org.matomocamp.companion.utils.configureToolbarColors
 import org.matomocamp.companion.utils.launchAndRepeatOnLifecycle
 import org.matomocamp.companion.utils.setNfcAppDataPushMessageCallbackIfAvailable
 import com.google.android.material.navigation.NavigationView

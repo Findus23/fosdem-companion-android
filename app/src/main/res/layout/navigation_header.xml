@@ -7,5 +7,4 @@
     android:paddingHorizontal="@dimen/main_menu_padding"
     android:paddingTop="@dimen/main_menu_padding"
     android:scaleType="fitCenter"
-    app:srcCompat="@drawable/ic_matomocamp_logo_textonly"
-    app:tint="?colorOnSurface" />
+    app:srcCompat="@drawable/ic_matomocamp_logo_textonly" />
