@@ -143,13 +143,6 @@ class BookmarksExportProvider : ContentProvider() {
             write("URL", event.url)
             write("LOCATION", event.roomName)
 
-            if (event.personsSummary != null) {
-                for (name in event.personsSummary.split(", ")) {
-                    val key = "ATTENDEE;ROLE=REQ-PARTICIPANT;CUTYPE=INDIVIDUAL;CN=\"$name\""
-                    val url = MatomoCampUrls.getPerson(name.toSlug(), year)
-                    write(key, url)
-                }
-            }
 
             write("END", "VEVENT")
         }

@@ -155,7 +155,7 @@
     <string name="directions">Directions to ULB</string>
     <string name="navigation">On-site navigation</string>
     <string name="no_data">No data available.</string>
-    <string name="volunteer">Volunteer</string>
+    <string name="website">Website</string>
     <string name="about_text">Programmed by <a href="https://www.digitalia.be/">Christophe Beyls</a>.
 \nBased on <a href="https://github.com/cbeyls/fosdem-companion-android">FOSDEM Companion</a>
 and adapted to MatomoCamp by <a href="https://lw1.at/">Lukas Winkler</a>.

@@ -11,17 +11,11 @@ object MatomoCampUrls {
         get() = "https://schedule.matomocamp.org/matomocamp-2022/schedule/export/schedule.xml"
     val rooms
         get() = "https://api.fosdem.org/roomstatus/v1/listrooms"
-    val localNavigation
-        get() = "https://nav.fosdem.org/"
-    val volunteer
-        get() = "https://fosdem.org/volunteer/"
+    val website
+        get() = "https://matomocamp.org/"
 
-    fun getEvent(slug: String, year: Int): String {
-        return "https://fosdem.org/$year/schedule/event/$slug/"
-    }
-
-    fun getPerson(slug: String, year: Int): String {
-        return "https://fosdem.org/$year/schedule/speaker/$slug/"
+    fun getPerson(id: Number): String {
+        return "https://schedule.matomocamp.org/matomocamp-2021/speaker/by-id/$id/"
     }
 
     fun getLocalNavigationToLocation(locationSlug: String): String {

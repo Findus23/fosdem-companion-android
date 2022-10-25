@@ -27,5 +27,9 @@
             android:id="@+id/menu_settings"
             android:icon="@drawable/ic_baseline_settings_24"
             android:title="@string/settings" />
+        <item
+            android:id="@+id/menu_website"
+            android:icon="@drawable/ic_baseline_open_in_browser_24"
+            android:title="@string/website" />
     </group>
 </menu>
