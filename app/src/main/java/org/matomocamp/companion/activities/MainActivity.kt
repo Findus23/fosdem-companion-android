@@ -70,8 +70,7 @@ class MainActivity : AppCompatActivity(R.layout.main), CreateNfcAppDataCallback 
         TRACKS(TracksFragment::class.java, R.id.menu_tracks, true, true),
         BOOKMARKS(BookmarksListFragment::class.java, R.id.menu_bookmarks, false, false),
         LIVE(LiveFragment::class.java, R.id.menu_live, true, false),
-        SPEAKERS(PersonsListFragment::class.java, R.id.menu_speakers, false, false),
-        MAP(MapFragment::class.java, R.id.menu_map, false, false);
+        SPEAKERS(PersonsListFragment::class.java, R.id.menu_speakers, false, false);
 
         companion object {
             fun fromMenuItemId(@IdRes menuItemId: Int): Section? {
@@ -318,14 +317,6 @@ class MainActivity : AppCompatActivity(R.layout.main), CreateNfcAppDataCallback 
                 R.id.menu_settings -> {
                     startActivity(Intent(this, SettingsActivity::class.java))
                     overridePendingTransition(R.anim.slide_in_right, R.anim.partial_zoom_out)
-                }
-                R.id.menu_volunteer -> try {
-                    CustomTabsIntent.Builder()
-                            .configureToolbarColors(this, R.color.light_color_primary)
-                            .setShowTitle(true)
-                            .build()
-                            .launchUrl(this, Uri.parse(MatomoCampUrls.volunteer))
-                } catch (ignore: ActivityNotFoundException) {
                 }
             }
         }

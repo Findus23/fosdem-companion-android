@@ -352,8 +352,8 @@ class EventDetailsFragment : Fragment(R.layout.fragment_event_details) {
 
     companion object {
         private const val ARG_EVENT = "event"
-        private const val CONFERENCE_NAME = "FOSDEM"
-        private const val CONFERENCE_HASHTAG = "#FOSDEM"
+        private const val CONFERENCE_NAME = "MatomoCamp"
+        private const val CONFERENCE_HASHTAG = "#MatomoCamp"
         private const val VENUE_NAME = "ULB"
 
         fun createArguments(event: Event) = Bundle(1).apply {
