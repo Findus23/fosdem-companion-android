@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<be.digitalia.fosdem.widgets.PhotoViewDrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<org.matomocamp.companion.widgets.PhotoViewDrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
@@ -73,4 +73,4 @@
 
     </com.google.android.material.navigation.NavigationView>
 
-</be.digitalia.fosdem.widgets.PhotoViewDrawerLayout>
+</org.matomocamp.companion.widgets.PhotoViewDrawerLayout>
