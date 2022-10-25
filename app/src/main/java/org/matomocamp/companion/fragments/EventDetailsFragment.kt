@@ -3,6 +3,7 @@ package org.matomocamp.companion.fragments
 import android.annotation.SuppressLint
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.provider.CalendarContract
 import android.text.SpannableString
@@ -106,6 +107,10 @@ class EventDetailsFragment : Fragment(R.layout.fragment_event_details) {
         override fun onMenuItemSelected(menuItem: MenuItem) = when (menuItem.itemId) {
             R.id.add_to_agenda -> {
                 addToAgenda()
+                true
+            }
+            R.id.open_in_webbrowser -> {
+                openInWebbrowser()
                 true
             }
             else -> false
@@ -241,7 +246,19 @@ class EventDetailsFragment : Fragment(R.layout.fragment_event_details) {
             )
         }
     }
+    private fun openInWebbrowser() {
+        try {
+            val context = activity
+            if (context != null) {
+                CustomTabsIntent.Builder()
+                    .configureToolbarColors(context, R.color.light_color_primary)
+                    .build()
+                    .launchUrl(context, Uri.parse(event.url))
+            }
+        } catch (ignore: ActivityNotFoundException) {
+        }
 
+    }
     private fun addToAgenda() {
         val intent = Intent(Intent.ACTION_EDIT).apply {
             type = "vnd.android.cursor.item/event"

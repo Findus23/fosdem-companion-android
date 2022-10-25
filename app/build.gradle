@@ -19,7 +19,7 @@ android {
         versionCode 1900210
         versionName "2.1.0"
         // Supported languages
-        resConfigs "en"
+        resConfigs "en", "de", "fr"
         vectorDrawables.useSupportLibrary = true
     }
 

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MatomoCamp Companion</string>
+    <string name="main_menu">Hauptmenü</string>
+    <string name="close_menu">Menü schließen</string>
+    <string name="last_update">DB zuletzt aktualisiert: %1$s</string>
+    <string name="never">Noch nie</string>
+    <string name="update_events_db">Eventdatenbank aktualisieren</string>
+    <string name="events_download_up_to_date">Datenbank ist bereits aktuell</string>
+    <string name="events_download_empty">Keine neuen Events gefunden</string>
+    <plurals name="events_download_completed">
+        <item quantity="one">%1$d Event erfolgreich heruntergeladen</item>
+        <item quantity="other">%1$d Events erfolgreich heruntergeladen</item>
+    </plurals>
+    <string name="menu_tracks">Kategorien</string>
+    <string name="menu_bookmarks">Vormerkungen</string>
+    <string name="menu_live">Live</string>
+    <string name="menu_speakers">Vortragende</string>
+    <string name="filter">Filter</string>
+    <string name="upcoming_only">Nur zukünftige</string>
+    <string name="export_bookmarks">Vormerkungen exportieren</string>
+    <string name="export_bookmarks_file_name">MatomoCamp %1$d vorgemerkt.ics</string>
+    <string name="import_bookmarks">Vormerkungen importieren</string>
+    <string name="import_bookmarks_error">Vormerkungen können von der ausgewählten Datei nicht importiert werden\n\nStellen Sie sicher, dass die Datei mit dieser App erstellt wurde und das Jahr stimmt</string>
+    <string name="no_bookmark">Keine Vormerkungen</string>
+    <string name="remove_bookmarks">Vormerkungen löschen</string>
+    <string name="bookmark_conflict_content_description">%1$s\n Andere Vormerkungen sind zur selben Zeit geplant.</string>
+    <plurals name="selected">
+        <item quantity="one">%1$d ausgewählt</item>
+        <item quantity="other">%1$d ausgewählt</item>
+    </plurals>
+    <string name="all">Alle</string>
+    <string name="next">Nächste</string>
+    <string name="next_empty">Während MatomoCamp werden hier die Events der nächsten 3 Stunden angezeigt.</string>
+    <string name="all_empty">Alle Events werden hier angezeigt</string>
+    <string name="now">Jetzt</string>
+    <string name="now_empty">Während MatomoCamp werden hier laufende Events angezeigt.</string>
+    <string name="search_events">Events durchsuchen</string>
+    <string name="search_hint">Event, Kategorie, Person</string>
+    <string name="no_search_result">Keine Ergebnisse.</string>
+    <string name="event_not_found_error">Event konnte nicht gefunden werden.\nStellen Sie sicher, dass die Datenbank auf der neuersten Version ist.</string>
+    <string name="schedule_loading_error">Ein Fehler ist beim Aktualisieren aufgetreten. Bitte überprüfen Sie Ihre Internetverbindung.</string>
+    <string name="schedule_loading_retry_action">Nochmal versuchen</string>
+    <string name="settings">Einstellungen</string>
+    <string name="settings_appearance">Aussehen</string>
+    <string name="settings_appearance_theme_title">Themes</string>
+    <string-array name="settings_appearance_theme_entries">
+        <item>System Theme</item>
+        <item>Helles Theme</item>
+        <item>Dunkles Theme</item>
+    </string-array>
+    <string name="settings_notifications">Benachrichtigungen</string>
+    <string name="settings_notifications_enabled_title">Benachrichtigungen aktivieren</string>
+    <string name="settings_notifications_enabled_summary">Wenn aktiviert, werden Sie über vorgemerkte Events benachrichtigt.</string>
+    <string name="settings_notifications_channel_title">Anpassen</string>
+    <string name="settings_notifications_vibrate_title">Vibrieren</string>
+    <string name="settings_notifications_vibrate_summary">Bei Benachrichtigungen vibrieren</string>
+    <string name="settings_notifications_led_title">LED blinken</string>
+    <string name="settings_notifications_led_summary">Bei Benachrichtigungen LED blinken</string>
+    <string name="settings_notifications_delay_title">Benachrichtigungszeitpunkt</string>
+    <string-array name="settings_notifications_delay_entries">
+        <item>5 Minuten vorher</item>
+        <item>10 Minuten vorher</item>
+        <item>15 Minuten vorher</item>
+        <item>30 Minuten vorher</item>
+        <item>1 Stunde vorher</item>
+    </string-array>
+    <string name="settings_info">Informationen</string>
+    <string name="settings_info_about_title">Über</string>
+    <string name="settings_info_version_title">Version</string>
+    <string name="notification_events_channel_name">Über bevorstehende Events benachrichtigen</string>
+    <string name="in_progress_content_description">%1$s (im Gange)</string>
+    <string name="event_details">Eventdetails</string>
+    <string name="track_content_description">Kategorie: %1$s</string>
+    <string name="time_content_description">Zeit: %1$s</string>
+    <string name="room_content_description">Raum: %1$s</string>
+    <string name="details_content_description">Details: %1$s</string>
+    <string name="in_bookmarks_content_description">Vorgemerkt: %1$s</string>
+    <string name="related_links_header">Links</string>
+    <string name="add_bookmark">Vormerken</string>
+    <string name="remove_bookmark">Von Vormerkungen entfernen</string>
+    <string name="share">Teilen</string>
+    <string name="add_to_agenda">Zum Kalender hinzufügen</string>
+    <string name="calendar_not_found">Kein kompatibler Kalender gefunden.</string>
+    <plurals name="speakers">
+        <item quantity="one">Vortragender</item>
+        <item quantity="other">Vortragende</item>
+    </plurals>
+    <string name="talks_header">Vorträge</string>
+    <string name="more_info">Mehr Informationen</string>
+    <string name="no_data">Keine Daten Verfügbar.</string>
+    <string name="website">Webseite</string>
+    <string name="open_in_webbrowser">Im Webbrowser öffnen</string>
+    <string name="search_clear">Text löschen</string>
+    <string name="settings_general">Allgemein</string>
+    <string name="settings_general_use_device_time_zone_title">Verwende Zeitzone des Gerätes</string>
+    <string name="settings_general_use_device_time_zone_summary_off">Datum und Uhrzeit in Zeitzone der Konferenz anzeigen</string>
+    <string name="settings_general_use_device_time_zone_summary_on">Datum und Uhrzeit in Zeitzone des Gerätes anzeigen</string>
+</resources>
