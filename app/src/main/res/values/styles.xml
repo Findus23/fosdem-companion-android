@@ -49,7 +49,14 @@
         <item name="colorScheduleTimeForeground">?android:textColorPrimaryInverse</item>
     </style>
 
-    <style name="ThemeOverlay.App.ActionBar" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+    <style name="ThemeOverlay.App.ActionBar" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" >
+        <item name="colorControlNormal">@color/color_on_primary</item>
+        <item name="queryBackground">@color/color_on_primary</item>
+        <item name="submitBackground">@color/color_on_primary</item>
+        <item name="searchHintIcon">@color/color_on_primary</item>
+        <item name="android:textColorHint">@color/abc_hint_foreground_material_dark</item>
+<!--        <item name="android:textColor">#fff</item>-->
+    </style>
 
     <style name="Widget.App.Toolbar" parent="Widget.MaterialComponents.Toolbar">
         <item name="popupTheme">?actionBarPopupTheme</item>

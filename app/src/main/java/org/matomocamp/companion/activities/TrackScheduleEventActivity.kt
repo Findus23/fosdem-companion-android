@@ -87,6 +87,9 @@ class TrackScheduleEventActivity : AppCompatActivity(R.layout.track_schedule_eve
             val trackAppBarColor = ContextCompat.getColorStateList(this, track.appBarColorResId)!!
             setTaskColorPrimary(trackAppBarColor.defaultColor)
             findViewById<View>(R.id.appbar).tintBackground(trackAppBarColor)
+            val trackTextColor = ContextCompat.getColorStateList(this, R.color.color_on_primary)!!
+            toolbar.setTitleTextColor(trackTextColor)
+
         } else {
             val trackTextColor = ContextCompat.getColorStateList(this, trackType.textColorResId)!!
             toolbar.setTitleTextColor(trackTextColor)
