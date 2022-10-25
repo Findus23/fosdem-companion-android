@@ -20,17 +20,7 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.flatMapLatest
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import okio.buffer
 import java.time.LocalTime
@@ -113,85 +103,10 @@ class MatomoCampApi @Inject constructor(
 
     @OptIn(ExperimentalCoroutinesApi::class)
     val roomStatuses: Flow<Map<String, RoomStatus>> by lazy(LazyThreadSafetyMode.NONE) {
-        stateFlow(BackgroundWorkScope, emptyMap()) { subscriptionCount ->
-            // The room statuses will only be loaded when the event is live.
-            // Use the days from the database to determine it.
-            val scheduler = scheduleDao.days.flatMapLatest { days ->
-                val startEndTimestamps = LongArray(days.size * 2)
-                var index = 0
-                for (day in days) {
-                    startEndTimestamps[index++] = day.date.atTime(DAY_START_TIME)
-                        .atZone(DateUtils.conferenceZoneId)
-                        .toEpochSecond() * 1000L
-                    startEndTimestamps[index++] = day.date.atTime(DAY_END_TIME)
-                        .atZone(DateUtils.conferenceZoneId)
-                        .toEpochSecond() * 1000L
-                }
-                schedulerFlow(*startEndTimestamps)
-                    .flowWhileShared(subscriptionCount, SharingStarted.WhileSubscribed())
-            }
-            scheduler.distinctUntilChanged().flatMapLatest { isLive ->
-                if (isLive) {
-                    buildLiveRoomStatusesFlow()
-                        .flowWhileShared(subscriptionCount, SharingStarted.WhileSubscribed(5000L))
-                }
-                else flowOf(emptyMap())
-            }
-        }
         // Implementors: replace the above code block with the next line to disable room status support
-        // emptyFlow()
+         emptyFlow()
     }
 
-    /**
-     * Builds a stateful cold Flow which loads and refreshes the Room statuses during the event.
-     */
-    private fun buildLiveRoomStatusesFlow(): Flow<Map<String, RoomStatus>> {
-        var nextRefreshTime = 0L
-        var expirationTime = Long.MAX_VALUE
-        var retryAttempt = 0
-
-        return flow {
-            var now = SystemClock.elapsedRealtime()
-            var nextRefreshDelay = nextRefreshTime - now
-
-            if (now > expirationTime) {
-                // When the data expires, replace it with an empty value
-                emit(emptyMap())
-            }
-
-            while (true) {
-                delay(nextRefreshDelay)
-
-                nextRefreshDelay = try {
-                    val response = httpClient.get(MatomoCampUrls.rooms) { body, _ ->
-                        RoomStatusesParser().parse(body.source())
-                    }
-                    now = SystemClock.elapsedRealtime()
-
-                    retryAttempt = 0
-                    expirationTime = now + ROOM_STATUS_EXPIRATION_DELAY
-                    emit(response.body)
-                    ROOM_STATUS_REFRESH_DELAY
-                } catch (e: Exception) {
-                    if (e is CancellationException) {
-                        throw e
-                    }
-                    now = SystemClock.elapsedRealtime()
-
-                    if (now > expirationTime) {
-                        emit(emptyMap())
-                    }
-
-                    // Use exponential backoff for retries
-                    val multiplier = 2.0.pow(retryAttempt).toLong()
-                    retryAttempt++
-                    (ROOM_STATUS_FIRST_RETRY_DELAY * multiplier).coerceAtMost(ROOM_STATUS_REFRESH_DELAY)
-                }
-
-                nextRefreshTime = now + nextRefreshDelay
-            }
-        }
-    }
 
     companion object {
         private val DAY_START_TIME = LocalTime.of(8, 30)
