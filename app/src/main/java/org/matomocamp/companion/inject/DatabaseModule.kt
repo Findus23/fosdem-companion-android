@@ -25,7 +25,7 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object DatabaseModule {
-    private const val DB_FILE = "fosdem.sqlite"
+    private const val DB_FILE = "matomocamp.sqlite"
     private const val DB_DATASTORE_FILE = "database"
 
     @Provides

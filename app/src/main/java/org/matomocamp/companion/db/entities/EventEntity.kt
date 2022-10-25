@@ -28,6 +28,7 @@ class EventEntity(
         @ColumnInfo(name = "room_name")
         val roomName: String?,
         val slug: String?,
+        val url: String?,
         @ColumnInfo(name = "track_id")
         val trackId: Long,
         @ColumnInfo(name = "abstract")

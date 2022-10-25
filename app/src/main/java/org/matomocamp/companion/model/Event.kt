@@ -26,6 +26,7 @@ data class Event(
         @ColumnInfo(name = "room_name")
         val roomName: String?,
         val slug: String?,
+        val url: String?,
         val title: String?,
         @ColumnInfo(name = "subtitle")
         val subTitle: String?,
@@ -49,11 +50,6 @@ data class Event(
             Duration.between(startTime, endTime)
         }
 
-    val url: String?
-        get() {
-            val s = slug ?: return null
-            return MatomoCampUrls.getEvent(s, day.date.year)
-        }
 
     override fun toString(): String = title.orEmpty()
 }
