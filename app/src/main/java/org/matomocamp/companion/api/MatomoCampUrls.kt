@@ -15,7 +15,7 @@ object MatomoCampUrls {
         get() = "https://matomocamp.org/"
 
     fun getPerson(id: Number): String {
-        return "https://schedule.matomocamp.org/matomocamp-2021/speaker/by-id/$id/"
+        return "https://schedule.matomocamp.org/matomocamp-2022/speaker/by-id/$id/"
     }
 
     fun getLocalNavigationToLocation(locationSlug: String): String {

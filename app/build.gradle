@@ -14,10 +14,10 @@ android {
     defaultConfig {
         applicationId "org.matomocamp.companion"
         minSdkVersion 19
-        targetSdkVersion 32
+        targetSdkVersion 33
         multiDexEnabled = true
-        versionCode 1900210
-        versionName "2.1.0"
+        versionCode 1900301
+        versionName "3.0.1"
         // Supported languages
         resConfigs "en", "de", "fr"
         vectorDrawables.useSupportLibrary = true
@@ -111,10 +111,10 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
     implementation 'androidx.core:core-ktx:1.9.0'
-    implementation 'androidx.activity:activity-ktx:1.6.0'
-    implementation 'androidx.fragment:fragment-ktx:1.5.3'
+    implementation 'androidx.activity:activity-ktx:1.6.1'
+    implementation 'androidx.fragment:fragment-ktx:1.5.4'
     implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'androidx.viewpager2:viewpager2:1.1.0-beta01'
@@ -123,7 +123,7 @@ dependencies {
     implementation 'androidx.browser:browser:1.4.0'
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-    implementation 'androidx.paging:paging-runtime:3.1.1'
+    implementation 'androidx.paging:paging-runtime-ktx:3.1.1'
     implementation "androidx.room:room-ktx:$room_version"
     implementation "androidx.room:room-paging:$room_version"
     implementation "androidx.datastore:datastore-preferences:1.0.0"
