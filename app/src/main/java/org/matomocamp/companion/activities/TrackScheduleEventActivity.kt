@@ -83,8 +83,8 @@ class TrackScheduleEventActivity : AppCompatActivity(R.layout.track_schedule_eve
         title = "$track, $day"
         val trackType = track.type
         if (isLightTheme) {
-            window.statusBarColorCompat = ContextCompat.getColor(this, trackType.statusBarColorResId)
-            val trackAppBarColor = ContextCompat.getColorStateList(this, trackType.appBarColorResId)!!
+            window.statusBarColorCompat = ContextCompat.getColor(this, track.statusBarColorResId)
+            val trackAppBarColor = ContextCompat.getColorStateList(this, track.appBarColorResId)!!
             setTaskColorPrimary(trackAppBarColor.defaultColor)
             findViewById<View>(R.id.appbar).tintBackground(trackAppBarColor)
         } else {

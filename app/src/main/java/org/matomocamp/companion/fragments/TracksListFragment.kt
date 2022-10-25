@@ -104,7 +104,7 @@ class TracksListFragment : Fragment(R.layout.recyclerview) {
             this.track = track
             name.text = track.name
             type.setText(track.type.nameResId)
-            type.setTextColor(ContextCompat.getColorStateList(type.context, track.type.textColorResId))
+            type.setTextColor(ContextCompat.getColorStateList(type.context, track.textColorResId))
         }
 
         override fun onClick(view: View) {

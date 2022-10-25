@@ -339,7 +339,7 @@ class EventDetailsFragment : Fragment(R.layout.fragment_event_details) {
             try {
                 val context = v.context
                 CustomTabsIntent.Builder()
-                        .configureToolbarColors(context, event.track.type.appBarColorResId)
+                        .configureToolbarColors(context, event.track.appBarColorResId)
                         .setShowTitle(true)
                         .setStartAnimations(context, R.anim.slide_in_right, R.anim.slide_out_left)
                         .setExitAnimations(context, R.anim.slide_in_left, R.anim.slide_out_right)

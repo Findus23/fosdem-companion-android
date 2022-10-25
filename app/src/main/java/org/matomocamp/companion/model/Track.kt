@@ -57,4 +57,38 @@ data class Track(
     companion object {
         const val TABLE_NAME = "tracks"
     }
+
+    val appBarColorResId: Int
+        get() = when (name) {
+            "Privacy" -> R.color.track_privacy
+            "System administration" -> R.color.track_system_administration
+            "Integration" -> R.color.track_integration
+            "Digital Analytics" -> R.color.track_digital_analytics
+            "Using Matomo" -> R.color.track_using_matomo
+            "Use Cases" -> R.color.track_use_cases
+            "MatomoCamp" -> R.color.track_matomocamp
+            "Plugin Development" -> R.color.track_plugin_development
+            "Contributing" -> R.color.track_contributing
+            "Other Free Analytics" -> R.color.track_other_free_analytics
+            else -> R.color.track_other
+        }
+
+    val textColorResId: Int
+        get() = appBarColorResId
+
+    val statusBarColorResId: Int
+        get() = when (name) {
+            "Privacy" -> R.color.track_privacy_dark
+            "System administration" -> R.color.track_system_administration_dark
+            "Integration" -> R.color.track_integration_dark
+            "Digital Analytics" -> R.color.track_digital_analytics_dark
+            "Using Matomo" -> R.color.track_using_matomo_dark
+            "Use Cases" -> R.color.track_use_cases_dark
+            "MatomoCamp" -> R.color.track_matomocamp_dark
+            "Plugin Development" -> R.color.track_plugin_development_dark
+            "Contributing" -> R.color.track_contributing_dark
+            "Other Free Analytics" -> R.color.track_other_free_analytics_dark
+            else -> R.color.track_other_dark
+
+        }
 }
