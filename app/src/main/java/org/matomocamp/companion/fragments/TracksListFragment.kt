@@ -90,7 +90,7 @@ class TracksListFragment : Fragment(R.layout.recyclerview) {
 
     class TrackViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
         val name: TextView = itemView.findViewById(android.R.id.text1)
-        val type: TextView = itemView.findViewById(android.R.id.text2)
+//        val type: TextView = itemView.findViewById(android.R.id.text2)
 
         var day: Day? = null
         var track: Track? = null
@@ -103,8 +103,7 @@ class TracksListFragment : Fragment(R.layout.recyclerview) {
             this.day = day
             this.track = track
             name.text = track.name
-            type.setText(track.type.nameResId)
-            type.setTextColor(ContextCompat.getColorStateList(type.context, track.textColorResId))
+            name.setTextColor(ContextCompat.getColorStateList(name.context, track.textColorResId))
         }
 
         override fun onClick(view: View) {
