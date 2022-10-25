@@ -57,6 +57,12 @@ class LiveViewModel @Inject constructor(scheduleDao: ScheduleDao) : ViewModel() 
         scheduleDao.getEventsInProgress(now)
     }
 
+    val allEvents: Flow<PagingData<StatusEvent>> = createLiveEventsHotFlow { now ->
+        scheduleDao.getEvents()
+    }
+
+
+
     companion object {
         private val REFRESH_PERIOD = 1.minutes
         private val NEXT_EVENTS_INTERVAL = Duration.ofHours(3L)

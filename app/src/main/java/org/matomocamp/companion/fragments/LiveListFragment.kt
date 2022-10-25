@@ -91,3 +91,4 @@ sealed class LiveListFragment(
 
 class NextLiveListFragment : LiveListFragment(R.string.next_empty, LiveViewModel::nextEvents)
 class NowLiveListFragment : LiveListFragment(R.string.now_empty, LiveViewModel::eventsInProgress)
+class AllLiveListFragment : LiveListFragment(R.string.all_empty, LiveViewModel::allEvents)

@@ -8,7 +8,7 @@ package org.matomocamp.companion.api
 object MatomoCampUrls {
 
     val schedule
-        get() = "https://fosdem.org/schedule/xml"
+        get() = "https://schedule.matomocamp.org/matomocamp-2022/schedule/export/schedule.xml"
     val rooms
         get() = "https://api.fosdem.org/roomstatus/v1/listrooms"
     val localNavigation
