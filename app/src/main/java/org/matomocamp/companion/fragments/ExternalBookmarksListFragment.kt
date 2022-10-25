@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.matomocamp.companion.R
 import org.matomocamp.companion.adapters.EventsAdapter
-import org.matomocamp.companion.api.FosdemApi
+import org.matomocamp.companion.api.MatomoCampApi
 import org.matomocamp.companion.settings.UserSettingsProvider
 import org.matomocamp.companion.utils.assistedViewModels
 import org.matomocamp.companion.utils.launchAndRepeatOnLifecycle
@@ -35,7 +35,7 @@ class ExternalBookmarksListFragment : Fragment(R.layout.recyclerview) {
     @Inject
     lateinit var userSettingsProvider: UserSettingsProvider
     @Inject
-    lateinit var api: FosdemApi
+    lateinit var api: MatomoCampApi
     @Inject
     lateinit var viewModelFactory: ExternalBookmarksViewModel.Factory
     private val viewModel: ExternalBookmarksViewModel by assistedViewModels {

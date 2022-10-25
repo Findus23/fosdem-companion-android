@@ -45,7 +45,7 @@ import kotlin.math.pow
  * @author Christophe Beyls
  */
 @Singleton
-class FosdemApi @Inject constructor(
+class MatomoCampApi @Inject constructor(
     private val httpClient: HttpClient,
     private val scheduleDao: ScheduleDao,
     private val alarmManager: AppAlarmManager
@@ -73,7 +73,7 @@ class FosdemApi @Inject constructor(
     private suspend fun downloadScheduleInternal() {
         _downloadScheduleState.value = LoadingState.Loading()
         val res = try {
-            val response = httpClient.get(FosdemUrls.schedule, scheduleDao.lastModifiedTag.first()) { body, headers ->
+            val response = httpClient.get(MatomoCampUrls.schedule, scheduleDao.lastModifiedTag.first()) { body, headers ->
                 val length = body.contentLength()
                 val source = if (length > 0L) {
                     // Broadcast the progression in percents, with a precision of 1/10 of the total file size
@@ -163,7 +163,7 @@ class FosdemApi @Inject constructor(
                 delay(nextRefreshDelay)
 
                 nextRefreshDelay = try {
-                    val response = httpClient.get(FosdemUrls.rooms) { body, _ ->
+                    val response = httpClient.get(MatomoCampUrls.rooms) { body, _ ->
                         RoomStatusesParser().parse(body.source())
                     }
                     now = SystemClock.elapsedRealtime()

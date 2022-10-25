@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import org.matomocamp.companion.R
 import org.matomocamp.companion.adapters.EventsAdapter
-import org.matomocamp.companion.api.FosdemApi
+import org.matomocamp.companion.api.MatomoCampApi
 import org.matomocamp.companion.model.Person
 import org.matomocamp.companion.settings.UserSettingsProvider
 import org.matomocamp.companion.utils.assistedViewModels
@@ -30,7 +30,7 @@ class PersonInfoListFragment : Fragment(R.layout.recyclerview) {
     @Inject
     lateinit var userSettingsProvider: UserSettingsProvider
     @Inject
-    lateinit var api: FosdemApi
+    lateinit var api: MatomoCampApi
     @Inject
     lateinit var viewModelFactory: PersonInfoViewModel.Factory
     private val viewModel: PersonInfoViewModel by assistedViewModels {

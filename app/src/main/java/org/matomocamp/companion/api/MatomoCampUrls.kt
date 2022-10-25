@@ -5,7 +5,7 @@ package org.matomocamp.companion.api
  *
  * @author Christophe Beyls
  */
-object FosdemUrls {
+object MatomoCampUrls {
 
     val schedule
         get() = "https://fosdem.org/schedule/xml"

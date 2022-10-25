@@ -5,7 +5,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Fts4
 import androidx.room.PrimaryKey
-import org.matomocamp.companion.api.FosdemUrls
+import org.matomocamp.companion.api.MatomoCampUrls
 import org.matomocamp.companion.utils.toSlug
 import kotlinx.parcelize.Parcelize
 
@@ -20,7 +20,7 @@ data class Person(
 ) : Parcelable {
 
     fun getUrl(year: Int): String? {
-        return name?.let { FosdemUrls.getPerson(it.toSlug(), year) }
+        return name?.let { MatomoCampUrls.getPerson(it.toSlug(), year) }
     }
 
     override fun toString(): String = name.orEmpty()

@@ -32,7 +32,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import org.matomocamp.companion.R
 import org.matomocamp.companion.activities.PersonInfoActivity
-import org.matomocamp.companion.api.FosdemApi
+import org.matomocamp.companion.api.MatomoCampApi
 import org.matomocamp.companion.model.Building
 import org.matomocamp.companion.model.Event
 import org.matomocamp.companion.model.EventDetails
@@ -70,7 +70,7 @@ class EventDetailsFragment : Fragment(R.layout.fragment_event_details) {
     @Inject
     lateinit var userSettingsProvider: UserSettingsProvider
     @Inject
-    lateinit var api: FosdemApi
+    lateinit var api: MatomoCampApi
     @Inject
     lateinit var viewModelFactory: EventDetailsViewModel.Factory
     private val viewModel: EventDetailsViewModel by assistedViewModels {

@@ -4,7 +4,7 @@ import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Embedded
 import androidx.room.TypeConverters
-import org.matomocamp.companion.api.FosdemUrls
+import org.matomocamp.companion.api.MatomoCampUrls
 import org.matomocamp.companion.db.converters.NullableInstantTypeConverters
 import org.matomocamp.companion.utils.InstantParceler
 import kotlinx.parcelize.Parcelize
@@ -52,7 +52,7 @@ data class Event(
     val url: String?
         get() {
             val s = slug ?: return null
-            return FosdemUrls.getEvent(s, day.date.year)
+            return MatomoCampUrls.getEvent(s, day.date.year)
         }
 
     override fun toString(): String = title.orEmpty()

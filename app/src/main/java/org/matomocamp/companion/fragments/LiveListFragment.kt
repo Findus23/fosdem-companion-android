@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.matomocamp.companion.R
 import org.matomocamp.companion.adapters.EventsAdapter
-import org.matomocamp.companion.api.FosdemApi
+import org.matomocamp.companion.api.MatomoCampApi
 import org.matomocamp.companion.model.StatusEvent
 import org.matomocamp.companion.settings.UserSettingsProvider
 import org.matomocamp.companion.utils.launchAndRepeatOnLifecycle
@@ -34,7 +34,7 @@ sealed class LiveListFragment(
     @Inject
     lateinit var userSettingsProvider: UserSettingsProvider
     @Inject
-    lateinit var api: FosdemApi
+    lateinit var api: MatomoCampApi
     private val viewModel: LiveViewModel by viewModels({ requireParentFragment() })
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

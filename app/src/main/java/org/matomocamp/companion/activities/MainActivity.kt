@@ -26,8 +26,8 @@ import androidx.fragment.app.commit
 import androidx.lifecycle.lifecycleScope
 import org.matomocamp.companion.BuildConfig
 import org.matomocamp.companion.R
-import org.matomocamp.companion.api.FosdemApi
-import org.matomocamp.companion.api.FosdemUrls
+import org.matomocamp.companion.api.MatomoCampApi
+import org.matomocamp.companion.api.MatomoCampUrls
 import org.matomocamp.companion.db.ScheduleDao
 import org.matomocamp.companion.fragments.BookmarksListFragment
 import org.matomocamp.companion.fragments.LiveFragment
@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity(R.layout.main), CreateNfcAppDataCallback 
     lateinit var preferences: SharedPreferences
 
     @Inject
-    lateinit var api: FosdemApi
+    lateinit var api: MatomoCampApi
 
     @Inject
     lateinit var scheduleDao: ScheduleDao
@@ -324,7 +324,7 @@ class MainActivity : AppCompatActivity(R.layout.main), CreateNfcAppDataCallback 
                             .configureToolbarColors(this, R.color.light_color_primary)
                             .setShowTitle(true)
                             .build()
-                            .launchUrl(this, Uri.parse(FosdemUrls.volunteer))
+                            .launchUrl(this, Uri.parse(MatomoCampUrls.volunteer))
                 } catch (ignore: ActivityNotFoundException) {
                 }
             }
